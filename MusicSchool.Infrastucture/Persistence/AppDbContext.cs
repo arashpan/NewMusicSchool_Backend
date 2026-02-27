@@ -31,12 +31,12 @@ namespace MusicSchool.Infrastructure.Persistence
             base.OnModelCreating(modelBuilder);
 
 
-            //// تنظیم Discriminator برای تمایز مدل‌ها
-            //modelBuilder.Entity<Employee>()
-            //    .HasDiscriminator<string>("Discriminator")
-            //    .HasValue<Manager>("Manager")
-            //    .HasValue<Secretary>("Secretary")
-            //    .HasValue<SuperAdmin>("SuperAdmin");
+            // تنظیم Discriminator برای تمایز مدل‌ها
+            modelBuilder.Entity<Employee>()
+                .HasDiscriminator<string>("Discriminator")
+                .HasValue<Manager>("Manager")
+                .HasValue<Secretary>("Secretary")
+                .HasValue<SuperAdmin>("SuperAdmin");
 
             // مشخص کردن جداول جداگانه برای هر مدل
             modelBuilder.Entity<Manager>().ToTable("Managers");
